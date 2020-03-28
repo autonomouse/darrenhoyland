@@ -2,7 +2,9 @@ const path = require(`path`)
 const _ = require("lodash")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
+  // See https://www.gatsbyjs.org/docs/node-apis/#onCreateNode
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })
@@ -16,6 +18,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 }
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
+  // See https://www.gatsbyjs.org/docs/node-apis/#createPages
   const { createPage } = actions
 
   const markdownEntryTemplate = path.resolve("src/templates/markdown-entry.js")
@@ -34,6 +37,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               slug
             }
             frontmatter {
+              title
               tags
               categories
             }
@@ -58,19 +62,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
-
-  const posts = result.data.postsRemark.edges
-
-  // Create post detail pages
-  posts.forEach(({ node }) => {
-    createPage({
-      path: node.fields.slug,
-      component: markdownEntryTemplate,
-      context: {
-        slug: node.fields.slug,
-      },
-    })
-  })
 
   // Extract tag data from query
   const tags = result.data.tagsGroup.group
@@ -98,6 +89,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         category: category.fieldValue,
       },
     })
+    // Add a post so category forms part of the url, e.g. /category/title
+    const posts = result.data.postsRemark.edges
+
+    // Create post detail pages
+    posts.forEach(({ node }) => {
+      createPage({
+        path: `${_.kebabCase(category.fieldValue)}/${_.kebabCase(node.frontmatter.title)}`,
+        component: markdownEntryTemplate,
+        context: {
+          slug: node.fields.slug,
+        },
+      })
+    })
+    //
   })
 
 }
