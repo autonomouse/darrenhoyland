@@ -1,9 +1,16 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
+// Components
+import { Helmet } from "react-helmet"
+
+
 export default ({ props }) => {
     return (
-      <h1>{props.site.siteMetadata.title}</h1>
+      <>
+        <Helmet title={props.site.siteMetadata.title} />
+        <h1>{props.site.siteMetadata.title}</h1>
+      </>
     )
   }
 
