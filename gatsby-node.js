@@ -83,7 +83,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Make category pages
   categories.forEach(category => {
     createPage({
-      path: `/categories/${_.kebabCase(category.fieldValue)}/`,
+      path: `${_.kebabCase(category.fieldValue)}/${_.kebabCase(node.frontmatter.title)}`,
       component: categoryTemplate,
       context: {
         category: category.fieldValue,
