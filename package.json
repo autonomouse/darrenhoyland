@@ -8,8 +8,12 @@
   "author": "Ivan Ganev <ganevio92@gmail.com>",
   "scripts": {
     "build": "gatsby build",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "start": "gatsby develop"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop"
   },
   "dependencies": {
     "gatsby": "^2.18.7",
