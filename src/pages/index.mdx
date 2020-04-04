@@ -2,11 +2,33 @@
 
 <p>&nbsp;</p>
 
-<h3>Blog&nbsp;&nbsp;
-  <Link to='blog'>
-    <Button style={{marginTop: '8px'}}>all posts and articles</Button>
-  </Link>
-</h3>
+<Link to='blog'>
+  <Button style={{marginTop: '8px'}}>Blog</Button>
+</Link>
+
+<Link to='projects'>
+  <Button style={{marginTop: '8px'}}>Projects</Button>
+</Link>
+
+<Link to='novels'>
+  <Button style={{marginTop: '8px'}}>Novels</Button>
+</Link>
+
+<Link to='creative_writing'>
+  <Button style={{marginTop: '8px'}}>Creative Writing</Button>
+</Link>
+
+<Link to='quotes'>
+  <Button style={{marginTop: '8px'}}>Words To Live By</Button>
+</Link>
+
+<Link to='words'>
+  <Button style={{marginTop: '8px'}}>Words I Didn't Know</Button>
+</Link>
+
+<p>&nbsp;</p>
+
+<h3>Blog</h3>
 <FeedItems
   itemsFormat="compact"
   filterByTags={['Blog', 'post', 'article']}
@@ -15,14 +37,7 @@
 
 <p>&nbsp;</p>
 
-<h3>Writing&nbsp;&nbsp;
-  <Link to='novels'>
-    <Button style={{marginTop: '8px'}}>Novels</Button>
-  </Link>
-  <Link to='creative_writing'>
-    <Button style={{marginTop: '8px'}}>Creative Writing</Button>
-  </Link>
-</h3>
+<h3>Writing</h3>
 <FeedItems
   itemsFormat="compact"
   filterByTags={['short story', 'novel', 'book', 'writing', 'creative_writing', 'Creative_Writing']}
@@ -32,14 +47,6 @@
 
 ### Projects
 
-<FeedItems itemsFormat="compact" filterByTags={['project']} />
+<FeedItems itemsFormat="compact" filterByTags={['project', 'Project']} />
 
 <p>&nbsp;</p>
-
-### Words To Live by
-
-<FeedItems itemsFormat="compact" filterByTags={['quote', 'quotes']} />
-
-<p>&nbsp;</p>
-
-<Tags />

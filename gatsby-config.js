@@ -14,8 +14,16 @@ module.exports = {
     twitterCreator: 'https://twitter.com/darrenhoyland', // creator account on twitter
     social: [
       {
+        icon: `creative-commons-share`,
+        url: `/cv`
+      },
+      {
         icon: `linkedin`,
         url: `https://www.linkedin.com/in/darrenhoyland`
+      },
+      {
+        icon: `gitlab`,
+        url: `https://gitlab.com/autonomouse`
       },
       {
         icon: `github`,
