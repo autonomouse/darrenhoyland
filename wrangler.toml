@@ -1,0 +1,10 @@
+name = "darrenhoyland"
+type = "webpack"
+account_id = "8b0070631461b331a00ce3c16da3d5d4"
+workers_dev = true
+route = "*darrenhoyland.info/*"
+zone_id = "4c4e8e89f4dadb832aeb317e8cc61cf0"
+
+[site]
+bucket = "./public"
+entry-point = "workers-site"

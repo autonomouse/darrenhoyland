@@ -3,7 +3,7 @@ module.exports = {
     siteTitle: 'Darren Hoyland',
     siteDescription: "Darren Hoyland's personal website",
     siteImage: '/banner.png', // main image of the site for metadata
-    siteUrl: 'https://chronoblog-profile.now.sh/',
+    siteUrl: 'https://autonomouse.github.io/darrenhoyland/',
     pathPrefix: '/darrenhoyland',
     siteLanguage: 'en',
     ogLanguage: `en_GB`,
