@@ -14,7 +14,7 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "wrangler publish --env production"
   },
   "dependencies": {
     "gatsby": "^2.18.7",
