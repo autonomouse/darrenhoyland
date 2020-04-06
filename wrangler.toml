@@ -2,8 +2,12 @@ name = "darrenhoyland"
 type = "webpack"
 account_id = "8b0070631461b331a00ce3c16da3d5d4"
 workers_dev = true
-route = "*darrenhoyland.info/*"
+
+[env.production]
+# The ID of your domain you're deploying to
 zone_id = "4c4e8e89f4dadb832aeb317e8cc61cf0"
+# The route pattern your Workers application will be served at
+route = "*darrenhoyland.info/*"
 
 [site]
 bucket = "./public"
