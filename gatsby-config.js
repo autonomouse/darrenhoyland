@@ -4,7 +4,7 @@ module.exports = {
     siteDescription: "Darren Hoyland's personal website",
     siteImage: '/banner.png', // main image of the site for metadata
     siteUrl: 'https://chronoblog-profile.now.sh/',
-    pathPrefix: '/',
+    pathPrefix: '/darrenhoyland',
     siteLanguage: 'en',
     ogLanguage: `en_GB`,
     author: 'Darren Hoyland',
